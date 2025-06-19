@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AccessAI – Accessibility Questions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title mb-3 text-primary">📝 Accessibility Check</h2>
+            <p class="mb-4 text-muted">Please answer a few short questions about the station you just uploaded. Your answers help verify and improve the AI's prediction.</p>
+
+            <form method="POST">
+                <input type="hidden" name="upload_id" value="{{ upload_id }}">
+
+                <div class="mb-4">
+                    <label class="form-label d-block fw-bold">1. Is the path to the vehicle entrance clear?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="path_clear" value="1" required>
+                        <label class="form-check-label">✅ Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="path_clear" value="0">
+                        <label class="form-check-label">❌ No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="path_clear" value="-1">
+                        <label class="form-check-label">❓ Not sure</label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label d-block fw-bold">2. Is step-free access available (e.g. via elevator, ramp, or level boarding)?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lift_working" value="1" required>
+                        <label class="form-check-label">✅ Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lift_working" value="0">
+                        <label class="form-check-label">❌ No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lift_working" value="-1">
+                        <label class="form-check-label">❓ Not sure</label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label d-block fw-bold">3. Can you clearly read timetable or signs?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="readable_info" value="1" required>
+                        <label class="form-check-label">✅ Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="readable_info" value="0">
+                        <label class="form-check-label">❌ No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="readable_info" value="-1">
+                        <label class="form-check-label">❓ Not sure</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">📤 Submit answers</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
